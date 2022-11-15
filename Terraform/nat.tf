@@ -27,6 +27,17 @@ resource "google_compute_router_nat" "nat" {
   source_ip_ranges_to_nat            = ["ALL_IP_RANGES"]
   
 } 
+  
+  subnetwork {                         
+  
+  name                               = google_compute_subnetwork.sub2.name
+  source_ip_ranges_to_nat            = ["ALL_IP_RANGES"]
+  
+} 
+
+  
+  
+  
 
   }
 
