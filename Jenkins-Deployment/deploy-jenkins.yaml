@@ -19,7 +19,7 @@ spec:
       serviceAccountName: admin
       containers:
         - name: jenkins
-          image: morshed983/morshed983:myjenkins
+          image: morshed983/morshed983:myjen
           resources:
             limits:
               memory: "2Gi"
@@ -51,7 +51,21 @@ spec:
           volumeMounts:
             - name: jenkins-data
               mountPath: /var/jenkins_home
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
+
       volumes:
         - name: jenkins-data
           persistentVolumeClaim:
               claimName: jenkins-pvc
+        - name: docker-sock
+          hostPath:
+             path: "/var/run/docker.sock"
+              
+
+
+        
+
+
+
+
