@@ -19,7 +19,7 @@ spec:
       serviceAccountName: admin
       containers:
         - name: jenkins
-          image: jenkins/jenkins:lts
+          image: morshed983/morshed983:myjenkins
           resources:
             limits:
               memory: "2Gi"
